@@ -1,0 +1,43 @@
+﻿@model IEnumerable<NetworkNinja.Models.ForumModel>
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Forum List</h2>
+        </div>
+        <div class="col-6 text-right">
+            <a asp-controller="Item" asp-action="Create" class="btn btn-primary">Create new Forum</a>
+        </div>
+    </div>
+    <br />
+
+    @if (Model.Count() > 0)
+    {
+        <table class="table table-bordered table-striped" style="width:100%">
+            <thead>
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var forum in Model)
+                {
+                    <tr>
+                        <td><a asp-controller="SubForum" asp-action="@forum.Title" width="50%">@forum.Title</a></td>
+                        <td width="50%">@forum.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No items created yet</p>
+    }
+
+</div>
