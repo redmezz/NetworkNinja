@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NetworkNinja.Data;
 using NetworkNinja.Models;
 using System.Collections.Generic;
@@ -19,6 +20,12 @@ namespace NetworkNinja.Controllers
             IEnumerable<ForumModel> forums = _db.Forums;
 
             return View(forums);
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }

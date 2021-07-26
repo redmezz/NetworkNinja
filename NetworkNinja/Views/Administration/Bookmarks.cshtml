@@ -1,1 +1,82 @@
-﻿<h1>Bookmarks</h1>
+﻿
+
+<h1>Helpful Bookmarks</h1>
+<p>
+    <a href="mailto:usaf.usafa.10-mdg.mbx.10-mdss-sgsi-help-desk-org-box@mail.mil?subject=Here are more bookmarks">Email us</a>
+    if you can think of more to add to the list.
+</p>
+
+<input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for a link..." title="Type in a website name">
+<ul id="bookmarkUL">
+    <li>
+        <a target="_blank" href="https://dhmrsi.csd.disa.mil/OA_HTML/AppsLogin">DHMRsi</a>
+    </li>
+    <li>
+        <img src="../wwwroot/images/" alt="">
+        <a target="_blank" href="https://lms-jets.cce.af.mil/moodle/">ADLS</a>
+    </li>
+    <li>
+        <img src="../Images/dod_forms_icon.png" alt="">
+        <a target="_blank" href="https://www.esd.whs.mil/Directives/forms/">DoD Forms</a>
+    </li>
+    <li>
+        <img src="../Images/milconnect_icon.ico" alt="">
+        <a target="_blank" href="https://milconnect.dmdc.osd.mil/milconnect/">MilConnect</a>
+    </li>
+    <li>
+        <img src="../Images/JKO_Globe_Logo_White.svg" alt="">
+        <a target="_blank" href="https://jkodirect.jten.mil/Atlas2/page/login/Login.jsf">JKO</a>
+    </li>
+    <li>
+        <img src="../Images/LeaveWebLogo.png" alt="">
+        <a target="_blank" href="https://leave.af.mil/login">Leave Web</a>
+    </li>
+    <li>
+        <img src="../Images/myPay-Logo.svg" alt="">
+        <a target="_blank" href="https://mypay.dfas.mil/#/">myPay</a>
+    </li>
+    <li>
+        <i class="far fa-running"></i>
+        <a target="_blank" href="https://www.afpc.af.mil/Career-Management/Fitness-Program/">AF Fitness</a>
+    </li>
+    <li>
+
+        <a target="_blank" href="https://asimsimr.health.mil/imr/myIMR.aspx">ASIMS - My IMR</a>
+    </li>
+    <li>
+
+        <a target="_blank" href="https://www.tricareonline.com/tol2/prelogin/desktopIndex.xhtml">Tricare Online</a>
+    </li>
+    <li>
+
+        <a target="_blank" href="https://afpcsecure.us.af.mil/CheckPortal.aspx">PRDA (Personnel Records Display Application)</a>
+    </li>
+    <li>
+
+        <a target="_blank" href="https://www.my.af.mil/gcss-af/USAF/content/Yna7B">myPers</a>
+    </li>
+    <li>
+
+        <a target="_blank" href="https://w45.afpc.randolph.af.mil/AFPCSecureNet40/CheckPortal.aspx">vMPF</a>
+    </li>
+</ul>
+
+<!-- scripts -->
+<script>
+    function searchFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("bookmarkUL");
+        li = ul.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > - 1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
